@@ -3,11 +3,25 @@ import { getAuth } from "firebase-admin/auth";
 
 console.log('Hello, ', 'Keith');
 
-getAuth(app).projectConfigManager().getProjectConfig()
+// getAuth(app).projectConfigManager().getProjectConfig()
+//   .then((response) => {
+//     console.log('Project config: ', response)
+//   }).catch((error) => {
+//     console.log('Error getting project config:', error);
+//   });
+
+// FIREBASE_DYNAMIC_LINK_DOMAIN
+
+const updateRequest = {
+  mobileLinksConfig: {
+    domain: 'HOSTING_DOMAIN'
+  }
+}
+getAuth(app).projectConfigManager().updateProjectConfig(updateRequest)
   .then((response) => {
-    console.log('Project config: ', response)
+    console.log('Updated project config!');
   }).catch((error) => {
-    console.log('Error getting project config:', error);
+    console.log('Error updating the project:', error);
   });
 
 export default function Page() {
