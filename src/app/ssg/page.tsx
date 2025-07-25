@@ -1,11 +1,22 @@
-import { getDateString, getRandomUUID } from "../utils";
+import { app, getDateString, getRandomUUID } from "../utils";
+import { getAuth } from "firebase-admin/auth";
 
 console.log('Hello, ', 'Keith');
 
+getAuth(app).projectConfigManager().getProjectConfig()
+  .then((response) => {
+    console.log('Project config: ', response)
+  }).catch((error) => {
+    console.log('Error getting project config:', error);
+  });
+
 export default function Page() {
+  const message = "Hello, Keith!";
+
   return (
     <main className="content">
       <h1 className="heading">SSG</h1>
+      <p>{message}</p>
 
       <section className="data-container">
         <article className="card">
