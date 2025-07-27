@@ -1,5 +1,5 @@
 import { app, getDateString, getRandomUUID } from "../utils";
-import { getAuth } from "firebase-admin/auth";
+import { getAuth, UpdateProjectConfigRequest } from "firebase-admin/auth";
 
 console.log('Hello, ', 'Keith');
 
@@ -12,7 +12,7 @@ console.log('Hello, ', 'Keith');
 
 // FIREBASE_DYNAMIC_LINK_DOMAIN
 
-const updateRequest = {
+const updateRequest: UpdateProjectConfigRequest = {
   mobileLinksConfig: {
     domain: 'HOSTING_DOMAIN'
   }
