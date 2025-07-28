@@ -3,28 +3,28 @@ import { getAuth, UpdateProjectConfigRequest } from "firebase-admin/auth";
 
 console.log('Hello, ', 'Keith');
 
-// getAuth(app).projectConfigManager().getProjectConfig()
-//   .then((response) => {
-//     console.log('Project config: ', response)
-//   }).catch((error) => {
-//     console.log('Error getting project config:', error);
-//   });
+getAuth(app).projectConfigManager().getProjectConfig()
+  .then((response) => {
+    console.log('Project config: ', response)
+  }).catch((error) => {
+    console.log('Error getting project config:', error);
+  });
 
 // FIREBASE_DYNAMIC_LINK_DOMAIN
 
 // HOSTING_DOMAIN
 
-const updateRequest: UpdateProjectConfigRequest = {
-  mobileLinksConfig: {
-    domain: 'FIREBASE_DYNAMIC_LINK_DOMAIN'
-  }
-}
-getAuth(app).projectConfigManager().updateProjectConfig(updateRequest)
-  .then((response) => {
-    console.log('Updated project config!');
-  }).catch((error) => {
-    console.log('Error updating the project:', error);
-  });
+// const updateRequest: UpdateProjectConfigRequest = {
+//   mobileLinksConfig: {
+//     domain: 'FIREBASE_DYNAMIC_LINK_DOMAIN'
+//   }
+// }
+// getAuth(app).projectConfigManager().updateProjectConfig(updateRequest)
+//   .then((response) => {
+//     console.log('Updated project config!');
+//   }).catch((error) => {
+//     console.log('Error updating the project:', error);
+//   });
 
 export default function Page() {
   const message = "Hello, Keith!";
