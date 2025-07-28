@@ -12,9 +12,11 @@ console.log('Hello, ', 'Keith');
 
 // FIREBASE_DYNAMIC_LINK_DOMAIN
 
+// HOSTING_DOMAIN
+
 const updateRequest: UpdateProjectConfigRequest = {
   mobileLinksConfig: {
-    domain: 'HOSTING_DOMAIN'
+    domain: 'FIREBASE_DYNAMIC_LINK_DOMAIN'
   }
 }
 getAuth(app).projectConfigManager().updateProjectConfig(updateRequest)
